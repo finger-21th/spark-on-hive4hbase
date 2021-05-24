@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<!-- HDFS NN的逻辑名称，使用上面设置的fbgcluster -->
+	<property>
+		<name>dfs.nameservices</name>
+		<value>fbgcluster</value>
+	</property>
+    <!-- 指定fbgcluster集群中NameNode节点 -->
+	<property>
+		<name>dfs.ha.namenodes.fbgcluster</name>
+		<value>fbgnn1,fbgnn2</value>
+	</property>
+    <!-- fbgnn1的RPC通信地址 -->
+	<property>
+		<name>dfs.namenode.rpc-address.fbgcluster.fbgnn1</name>
+		<value>fbgnn1:9000</value>
+	</property>
+    <!-- fbgnn2的RPC通信地址 -->
+    <property>
+        <name>dfs.namenode.rpc-address.fbgcluster.fbgnn2</name>
+        <value>fbgnn2:9000</value>
+    </property>
+    <!-- fbgnn1的http通信地址 -->
+	<property>
+        <name>dfs.namenode.http-address.fbgcluster.fbgnn1</name>
+        <value>fbgnn1:50070</value>
+    </property>
+    <!-- fbgnn2的http通信地址 -->
+    <property>
+        <name>dfs.namenode.http-address.fbgcluster.fbgnn2</name>
+        <value>fbgnn2:50070</value>
+    </property>
+    <!--设置一组journalNode的URI地址，active NN将edit log写入这些JournalNode，而standby NameNode读取这些edit log，并作用在内存中的目录树中。如果journalNode有多个节点则使用分号分割 -->
+    <property>
+        <name>dfs.namenode.shared.edits.dir</name>
+    	<value>qjournal://fbgnn1:8485;fbgnn2:8485;fbgdn1:8485/fbgcluster</value>
+    </property>
+    <!-- 客户端通过代理访问namenode,访问文件系统,HDFS客户端与Active节点通信的Java 类，使用其确定Active节点是否活跃,实现配置失败自动切换 -->
+    <property>
+        <name>dfs.client.failover.proxy.provider.fbgcluster</name>
+     	<value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+    </property>
+    <!-- 配置隔离机制，即同一时刻只能有一台服务器对外响应 -->
+    <property>
+        <name>dfs.ha.fencing.methods</name>
+       <value>
+           sshfence 
+           shell(/bin/true)
+        </value>
+    </property>
+    <!-- 使用隔离机制时需要ssh免密码登录 -->
+    <property>
+        <name>dfs.ha.fencing.ssh.private-key-files</name>
+        <value>/home/hadoop/.ssh/id_rsa</value>
+    </property>
+    <!-- 声明journalnode服务器存储目录，用于存放editlog和其他状态信息 -->
+    <property>
+        <name>dfs.journalnode.edits.dir</name>
+        <value>/data/hadoop/journal/</value>
+    </property>    
+    <!-- 配置自动故障转移，自动failover依赖于zookeeper集群和ZKFailoverController（ZKFC），后者是一个zookeeper客户端，用来监控NN的状态信息。每个运行NN的节点必须要运行一个zkfc -->
+    <property>
+        <name>dfs.ha.automatic-failover.enabled</name>
+        <value>true</value>
+    </property>
+    <!-- namenode 的数据存放目录 -->
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>/data/hadoop/hdfs/name</value>
+    </property>
+     <!-- datanode 的数据存放目录 -->
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>/data/hadoop/hdfs/data</value>
+    </property>
+	<!-- HDFS 的数据块的副本存储个数-->
+    <property>
+        <name>dfs.replication</name>
+        <value>3</value>
+    </property>
+    <!--JournalNode的HTTP地址和端口 --> 
+    <property>
+        <name>dfs.journalnode.http-address</name>
+        <value>0.0.0.0:8480</value>
+    </property>
+    <!--JournalNode的RPC地址和端口 -->
+    <property>
+        <name>dfs.journalnode.rpc-address</name>
+        <value>0.0.0.0:8485</value>
+    </property>
+    <!-- 指定zookeeper地址 -->
+    <property>
+        <name>ha.zookeeper.quorum</name>
+        <value>fbgzk1:2181,fbgzk2:2181,fbgzk3:2181</value>
+    </property>
+    <!--表示datanode上负责进行文件操作的线程数。如果需要处理的文件过多，而这个参数设置得过低就会有一部分文件处理不过来，就会报异常 -->
+    <property>
+        <name>dfs.datanode.max.transfer.threads</name>
+        <value>16384</value>
+    </property>
+    <!--客户端的超时时间单位ms -->
+    <property>
+        <name>dfs.client.socket-timeout</name>
+        <value>600000</value>
+    </property>
+    <property>
+        <name>dfs.hosts.exclude</name>
+        <value>/usr/local/hadoop-3.2.1/etc/hadoop/datanode.excludes</value>
+    </property>    
+</configuration>
