@@ -73,6 +73,7 @@
     <orderEntry type="library" name="Maven: org.apache.htrace:htrace-core4:4.1.0-incubating" level="project" />
     <orderEntry type="library" name="Maven: org.apache.zookeeper:zookeeper:3.4.13" level="project" />
     <orderEntry type="library" name="Maven: jline:jline:0.9.94" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.yetus:audience-annotations:0.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-compress:1.18" level="project" />
     <orderEntry type="library" name="Maven: org.apache.kerby:kerb-simplekdc:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.kerby:kerb-client:1.0.1" level="project" />
@@ -229,6 +230,8 @@
     <orderEntry type="library" name="Maven: org.apache.hive.shims:hive-shims-common:2.3.7" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.hive.shims:hive-shims-0.23:2.3.7" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.hive.shims:hive-shims-scheduler:2.3.7" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hive:hive-llap-common:2.3.7" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hive:hive-llap-client:2.3.7" level="project" />
     <orderEntry type="library" name="Maven: commons-httpclient:commons-httpclient:3.1" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" level="project" />
     <orderEntry type="library" name="Maven: joda-time:joda-time:2.10.5" level="project" />
@@ -246,7 +249,9 @@
     <orderEntry type="library" name="Maven: org.apache.hive:hive-service:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hive:hive-llap-server:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hive:hive-llap-common:test-jar:tests:3.1.1" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet.jsp:javax.servlet.jsp-api:2.3.1" level="project" />
     <orderEntry type="library" name="Maven: net.sf.jpam:jpam:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jamon:jamon-runtime:2.3.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hive:hive-service-rpc:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hive:hive-classification:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.4" level="project" />
@@ -256,7 +261,6 @@
     <orderEntry type="library" name="Maven: org.apache.hive:hive-exec:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hive:hive-llap-tez:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-1.2-api:2.10.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-api:2.10.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-core:2.10.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-slf4j-impl:2.10.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.ant:ant:1.9.1" level="project" />
@@ -273,50 +277,75 @@
     <orderEntry type="library" name="Maven: org.apache.hive.hcatalog:hive-hcatalog-core:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hive:hive-cli:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-archives:3.1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hive:hive-kryo-registrator:3.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hive:hive-llap-client:3.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hive:hive-llap-common:3.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hive:hive-llap-ext-client:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hive:hive-hplsql:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-client:2.2.4" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase.thirdparty:hbase-shaded-protobuf:2.2.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-hadoop-compat:2.2.4" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-hadoop2-compat:2.2.4" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-protocol-shaded:2.2.4" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-protocol:2.2.4" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase.thirdparty:hbase-shaded-miscellaneous:2.2.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase.thirdparty:hbase-shaded-netty:2.2.1" level="project" />
-    <orderEntry type="library" name="Maven: org.jruby.jcodings:jcodings:1.0.18" level="project" />
-    <orderEntry type="library" name="Maven: org.jruby.joni:joni:2.1.11" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.yetus:audience-annotations:0.5.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-server:2.2.4" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-http:2.2.4" level="project" />
-    <orderEntry type="library" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-procedure:2.2.4" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-zookeeper:2.2.4" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-replication:2.2.4" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-metrics-api:2.2.4" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-metrics:2.2.4" level="project" />
-    <orderEntry type="library" name="Maven: org.glassfish.web:javax.servlet.jsp:2.3.2" level="project" />
-    <orderEntry type="library" name="Maven: org.glassfish:javax.el:3.0.1-b12" level="project" />
-    <orderEntry type="library" name="Maven: javax.servlet.jsp:javax.servlet.jsp-api:2.3.1" level="project" />
-    <orderEntry type="library" name="Maven: org.jamon:jamon-runtime:2.4.1" level="project" />
-    <orderEntry type="library" name="Maven: com.lmax:disruptor:3.3.6" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-distcp:2.8.5" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-common:2.2.4" level="project" />
-    <orderEntry type="library" name="Maven: com.github.stephenc.findbugs:findbugs-annotations:1.3.9-1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-hdfs:3.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-util-ajax:9.3.24.v20180605" level="project" />
     <orderEntry type="library" name="Maven: commons-daemon:commons-daemon:1.0.13" level="project" />
     <orderEntry type="library" name="Maven: org.fusesource.leveldbjni:leveldbjni-all:1.8" level="project" />
     <orderEntry type="library" name="Maven: org.apache.htrace:htrace-core:4.0.0-incubating" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hive:hive-hbase-handler:3.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-mapreduce:2.0.0-alpha4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-hadoop2-compat:2.0.0-alpha4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-metrics:2.0.0-alpha4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-metrics-api:2.0.0-alpha4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase.thirdparty:hbase-shaded-miscellaneous:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-client:2.0.0-alpha4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase.thirdparty:hbase-shaded-protobuf:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-protocol-shaded:2.0.0-alpha4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-protocol:2.0.0-alpha4" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase.thirdparty:hbase-shaded-netty:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jruby.jcodings:jcodings:1.0.18" level="project" />
+    <orderEntry type="library" name="Maven: org.jruby.joni:joni:2.1.11" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-server:2.0.0-alpha4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-http:2.0.0-alpha4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-procedure:2.0.0-alpha4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-common:tests:2.0.0-alpha4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-replication:2.0.0-alpha4" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.hbase:hbase-prefix-tree:2.0.0-alpha4" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.hbase:hbase-common:tests:2.0.0-alpha4" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.commons:commons-collections4:4.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-collections4:4.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.web:javax.servlet.jsp:2.3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish:javax.el:3.0.1-b12" level="project" />
+    <orderEntry type="library" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.lmax:disruptor:3.3.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-distcp:2.7.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-mapreduce:2.0.0-alpha4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-common:2.0.0-alpha4" level="project" />
+    <orderEntry type="library" name="Maven: com.github.stephenc.findbugs:findbugs-annotations:1.3.9-1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hbase:hbase-hadoop-compat:2.0.0-alpha4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hbase:hbase-hadoop2-compat:tests:2.0.0-alpha4" level="project" />
     <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch:7.4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch-core:7.4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch-secure-sm:7.4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch-x-content:7.4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.17" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-smile:2.8.11" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.11" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.8.11" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch-geo:7.4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-core:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-analyzers-common:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-backward-codecs:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-grouping:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-highlighter:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-join:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-memory:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-misc:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-queries:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-queryparser:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-sandbox:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-spatial:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-spatial-extras:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-spatial3d:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-suggest:8.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch-cli:7.4.0" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.jopt-simple:jopt-simple:5.0.2" level="project" />
+    <orderEntry type="library" name="Maven: com.carrotsearch:hppc:0.8.1" level="project" />
+    <orderEntry type="library" name="Maven: com.tdunning:t-digest:3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.hdrhistogram:HdrHistogram:2.1.9" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-api:2.11.1" level="project" />
+    <orderEntry type="library" name="Maven: org.elasticsearch:jna:4.5.1" level="project" />
   </component>
 </module>

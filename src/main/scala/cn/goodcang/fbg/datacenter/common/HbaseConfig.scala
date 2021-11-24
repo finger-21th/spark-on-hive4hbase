@@ -1,4 +1,4 @@
-package cn.goodcang.fbg.datamiddleground.common
+package cn.goodcang.fbg.datacenter.common
 
 import org.apache.hadoop.hbase.HBaseConfiguration
 import org.apache.hadoop.conf.Configuration
@@ -33,6 +33,14 @@ object HBaseConfig {
     val conf = HBaseConfiguration.create
 
     for ((key, value) <- options) { conf.set(key, value) }
+
+    apply(conf)
+  }
+
+  def apply(zk:String): HBaseConfig = {
+    val conf = HBaseConfiguration.create
+
+    conf.set(Constants.ZOOKEEPER_QUORUM, zk)
 
     apply(conf)
   }

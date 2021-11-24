@@ -1,4 +1,4 @@
-package cn.goodcang.fbg.datamiddleground.common
+package cn.goodcang.fbg.datacenter.common
 
 import net.sf.jsqlparser.expression.Expression
 import net.sf.jsqlparser.parser.{CCJSqlParser, CCJSqlParserUtil}
@@ -9,11 +9,11 @@ import java.util
 import java.util.function.Consumer
 
 
-object DefindParser {
+object SqlParser {
 
   def parse(sql: String): Query = {
     try {
-      val statement: Statement = CCJSqlParserUtil.parse(sql.replaceAll("\\|"," "), new Consumer[CCJSqlParser] {
+      val statement: Statement = CCJSqlParserUtil.parse(sql.replaceAll("\\|", " "), new Consumer[CCJSqlParser] {
         override def accept(t: CCJSqlParser): Unit = {
           t.withSquareBracketQuotation(true)
         }
@@ -35,8 +35,8 @@ object DefindParser {
       Query(select_main_clause
         , from_table
         , main_tab_foreign_key
-        , from_table_fields
-        , from_table_fields_alias
+        , from_table_fields.filter(!_.equals(Constants.EMPTY_STRING)).toArray
+        , from_table_fields_alias.filter(!_.equals(Constants.EMPTY_STRING)).toArray
         , filter_field)
 
     } catch {
@@ -60,9 +60,9 @@ object DefindParser {
 
     var filter: String = null
     if (field != null) {
-      (0 to from_table_fields.size - 1).foreach(field_index => {
-        if (field.equals(from_table_fields(field_index)))
-          filter = String.format("%s is not null", from_table_fields_alias(field_index))
+      from_table_fields.foreach(from_table_field => {
+        if (field.equals(from_table_fields))
+          filter = String.format("%s is not null", from_table_fields)
       })
     }
 
@@ -140,7 +140,10 @@ object DefindParser {
   case class Query(select_main_clause: String
                    , from_tab: String
                    , main_tab_foreign_key: String
-                   , from_table_fields: List[String]
-                   , from_table_fields_alias: List[String]
+                   , from_table_fields: Array[String]
+                   , from_table_fields_alias: Array[String]
                    , filter: String) extends Serializable
+
+
+
 }

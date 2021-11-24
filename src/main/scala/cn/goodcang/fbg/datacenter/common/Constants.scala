@@ -1,4 +1,4 @@
-package cn.goodcang.fbg.datamiddleground.common
+package cn.goodcang.fbg.datacenter.common
 
 object Constants {
 
