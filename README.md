@@ -1,1 +1,1 @@
-# spark-on-hive4es
+# spark-on-hive4hbase
